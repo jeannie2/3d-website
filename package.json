@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "homepage": "https://jeannie2.github.io/ecommerce",
   "description": "",
-  "main": "../src/index.js",
+  "main": "index.js",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

@@ -1,0 +1,35 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+h1 {
+  text-align: center;
+}
+
+.btn.btn:active {
+  background-color: green !important;
+}
+
+#about-container {
+  color: black;
+}
+
+#bookmarked-container {
+  text-align: center;
+}
+
+#bookmarked-container li {
+  list-style: none;
+  box-shadow: 2px 5px 5px 3px black;
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
+#bookmarked-container span {
+  font-weight: bold;
+}
+
+.card.img {
+  height: 100%;
+ /* display: flex;
+
+  height: auto; */
+}

@@ -11,13 +11,13 @@ module.exports = {
   target: 'web',
   devServer: {
     port: '5000',
-    disableHostCheck: true,
     static: {
       directory: path.join(__dirname, 'public')
 },
     open: true,
     hot: true,
     liveReload: true,
+    allowedHosts: 'all',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],

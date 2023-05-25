@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card';
 const ProductCard = ({product, quantity}) =>  {
 
 const inputRef = useRef(null)
-const [amount, setAmount] = useState(1) // useState({quantity: ''})
+const [amount, setAmount] = useState(1)
 
 const handleAmount = e => {
   let onlyNumbers = e.target.value.replace(/\D/g, "");
@@ -31,7 +31,7 @@ return (
           id="quantity-input"
           ref={inputRef}
           value={amount}
-          name="roomRent"
+          name="quan"
           onChange={handleAmount}
           ></input>
           <Button variant="primary" onClick={() => addBookmark(product, inputRef)}>Bookmark</Button>

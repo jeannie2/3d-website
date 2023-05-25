@@ -17,7 +17,6 @@ const AboutPage = () => {
       <ul>
         <li>Senior Digital Marketing Executive, HKTDC</li>
         <li>Editorial Staff, Taylor & Francis Group</li>
-        <li>Web Intern, Time Out Hong Kong </li>
       </ul>
       </div>
 

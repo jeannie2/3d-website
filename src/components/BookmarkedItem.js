@@ -16,5 +16,3 @@ const BookmarkedItem = ({ item }) => {
 };
 
 export default BookmarkedItem;
-
-//  <img src={item.image} alt='' />

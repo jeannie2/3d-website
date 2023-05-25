@@ -13,7 +13,7 @@ const BookmarkedState = ({ children }) => {
   const handleChange = (e) => {
     dispatch({
       type: "CHANGE_INPUT",
-      payload: e.target.value // payload: {name: e.target.name, value: e.target.value}
+      payload: e.target.value
     })
   }
 

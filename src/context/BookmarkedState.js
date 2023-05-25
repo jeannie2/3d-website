@@ -32,8 +32,7 @@ const BookmarkedState = ({ children }) => {
         bookmarkedItems: state.bookmarkedItems,
         handleChange,
         addBookmark,
-        removeBookmark,
-        calculateTotal
+        removeBookmark
       }}
     >
       {children}

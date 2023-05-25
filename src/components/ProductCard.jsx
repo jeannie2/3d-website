@@ -1,6 +1,6 @@
 import React, { useState, useContext, useRef } from "react";
 import BookmarkedContext from "../context/BookmarkedContext";
-import { Row, Col, Button } from 'react-bootstrap';
+import { Col, Button } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 
 const ProductCard = ({product, quantity}) =>  {

@@ -3,8 +3,8 @@ const BookmarkedReducer = (state, action) => {
   switch (action.type) {
     case "ADD_BOOKMARK": {
     let check_index = state.bookmarkedItems.find((item) => item.id === action.payload.item.id);
-      console.log("action payload item id: " + action.payload.item.id)
-      console.log("action payload input ref current value: " + action.payload.inputRef.current.value)
+      //console.log("action payload item id: " + action.payload.item.id)
+      //console.log("action payload input ref current value: " + action.payload.inputRef.current.value)
 
         if(check_index) {
           console.log("ALREADY THERE");

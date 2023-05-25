@@ -25,10 +25,6 @@ const BookmarkedState = ({ children }) => {
     dispatch({ type: "REMOVE_BOOKMARK", payload: id});
   };
 
-  const calculateTotal = () => {
-    dispatch({ type: "CALCULATE_TOTAL"})
-  }
-
   return (
     <BookmarkedContext.Provider
       value={{

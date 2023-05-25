@@ -32,19 +32,6 @@ const BookmarkedReducer = (state, action) => {
         ),
       };
     }
-
-    case "CALCULATE_TOTAL": {
-    let total = 0;
-    console.log("TOTAL:")
-      state.bookmarkedItems.forEach((product) =>
-      (state.total += product.price * product.quantity)
-      )
-      return {
-        ...state,
-        total: state.total
-      }
-    }
-
     default:
       return state;
   }

@@ -5,7 +5,7 @@ import BookmarkedItem from "../components/BookmarkedItem";
 import Container from 'react-bootstrap/Container'
 
 const BookmarkedPage = () => {
-const {bookmarkedItems, calculateTotal} = useContext(BookmarkedContext);
+const {bookmarkedItems} = useContext(BookmarkedContext);
 
 const sum = () => {
   let total = 0;

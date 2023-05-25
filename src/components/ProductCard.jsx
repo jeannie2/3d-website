@@ -14,7 +14,7 @@ const handleAmount = e => {
   setAmount(onlyNumbers)
 }
 
-const { total, handleChange, addBookmark, removeBookmark } = useContext(BookmarkedContext)
+const { total, addBookmark, removeBookmark } = useContext(BookmarkedContext)
 
 return (
 <Col className="col-sm-12 col-md-3 mt-3">

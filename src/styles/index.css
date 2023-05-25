@@ -1,18 +1,6 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
-h1 {
-  text-align: center;
-}
-
-.btn.btn:active {
-  background-color: green !important;
-}
-
-#about-container {
-  color: black;
-}
-
-#bookmarked-container {
+#bookmarked-container, #shop-container {
   text-align: center;
 }
 
@@ -27,9 +15,35 @@ h1 {
   font-weight: bold;
 }
 
-.card.img {
-  height: 100%;
- /* display: flex;
+#search {
+  width: 20rem;
+  background:#F0F0F0;
+  border:none;
+  padding:0.5rem;
+}
 
-  height: auto; */
+#about-container {
+  color: black;
+}
+
+h1 {
+  text-align: center;
+}
+
+.btn.btn:active {
+  background-color: green !important;
+}
+
+#sort {
+  float: right;
+}
+
+#quantity-input {
+  margin: 0.5rem;
+}
+
+img.card-img {
+  width: 100%;
+  height: 30vh;
+  object-fit: contain;
 }

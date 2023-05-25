@@ -37,7 +37,8 @@ const BookmarkedReducer = (state, action) => {
             quantity: action.payload.inputRef.current.value // stock
           })
         }
-        "CALCULATE_TOTAL"
+
+        //"CALCULATE_TOTAL"
       return {
         ...state,
         bookmarkedItems: [...state.bookmarkedItems]

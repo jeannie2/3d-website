@@ -6,7 +6,7 @@ const BookmarkedItem = ({ item }) => {
 
   return (
     <li>
-      <p><span>NAME: </span> {item.name} </p>
+      <p><span>NAME: </span> {item.title} </p>
       <p><span>Product ID: </span>{item.id} </p>
       <p><span> PRICE: $</span>{item.price} </p>
       <p><span>QUANTITY: </span>{item.quantity} </p>

@@ -1,6 +1,6 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
-#bookmarked-container, #shop-container {
+#bookmarked-container {
   text-align: center;
 }
 

@@ -1,16 +1,13 @@
-import React from "react";
+import React from "react"
 // import React, {useMemo} from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NavbarComp from "./components/Navbar";
-import ShopPage from "./pages/Store";
-import BookmarkedPage from "./pages/Bookmarked";
-import AboutPage from "./pages/About";
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import NavbarComp from "./components/Navbar"
+import ContactFormPage from "./pages/ContactFormPage"
+// import BookmarkedPage from "./pages/Bookmarked"
+// import AboutPage from "./pages/About"
 
-import R3fPage from "./pages/R3f";
-
-import Footer from "./components/Footer";
-
-import BookmarkedState from "./context/BookmarkedState";
+import R3fPage from "./pages/R3f"
+import Footer from "./components/Footer"
 
 const App = () =>{
 //  const Canv = useMemo(() => (
@@ -27,9 +24,9 @@ const App = () =>{
           <NavbarComp />
           {/* <BookmarkedState> */}
           <Routes>
-            <Route path="/" element={<ShopPage /> } />
-            <Route path="/bookmarked" element={<BookmarkedPage />} />
-            <Route path="/about" element={<AboutPage />} />
+            <Route path="/" element={<ContactFormPage /> } />
+            {/* <Route path="/bookmarked" element={<BookmarkedPage />} /> */}
+            {/* <Route path="/about" element={<AboutPage />} /> */}
             <Route path="/r3f" element={<R3fPage />} />
             {/* <Route path="/r3f" element={<Canv />} /> */}
              {/* element={<R3fPage />} */}

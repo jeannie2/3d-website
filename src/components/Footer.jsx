@@ -3,9 +3,9 @@ import React from 'react'
 function Footer () {
   return (
     <>
-      <div class="container-fluid px-0">
-      <footer class="bg-black d-flex justify-content-center py-3 fixed-bottom sticky-bottom">
-        <ul class="nav text-white">
+      <div className="container-fluid px-0">
+      <footer className="bg-black d-flex justify-content-center py-3 fixed-bottom sticky-bottom">
+        <ul className="nav text-white">
           <li className="nav-item"><a href="https://www.tesla.com/about" className="nav-link px-2 text-white">Tesla &copy; 2023</a></li>
           <li className="nav-item"><a href="https://www.tesla.com/legal" className="nav-link px-2 text-white">Privacy & Legal</a></li>
           <li className="nav-item"><a href="https://www.tesla.com/contact" className="nav-link px-2 text-white">Contact</a></li>

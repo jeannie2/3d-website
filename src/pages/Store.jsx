@@ -1,10 +1,12 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react"; // useMemo
 import axios from 'axios';
 
 import { Container, Row } from 'react-bootstrap';
 import SearchBar from "../components/SearchBar"
 import SortBar from "../components/SortBar"
 import ProductsComp from "../components/ProductsComp"
+
+import ContactForm from "../components/ContactForm"
 
 const ShopPage = () => {
   const [loading, setLoading] = useState(false);
@@ -63,10 +65,12 @@ const sortResults = (order) => {
     {loading && <div>Loading</div>}
     {!loading && (
     <Container id="shop-container" className='p-6'>
-      <SearchBar keyword={keyword} onChange={updateKeyword}/>
-      <SortBar order={order} onChange={sortResults}/>
+
+      {/* <SearchBar keyword={keyword} onChange={updateKeyword}/>
+      <SortBar order={order} onChange={sortResults}/> */}
         <Row>
-          <ProductsComp products={products} />
+            <ContactForm/>
+          {/* <ProductsComp products={products} /> */}
         </Row>
     </Container>
       )}

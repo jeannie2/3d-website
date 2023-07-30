@@ -23,9 +23,9 @@ const App = () =>{
       {Canv}
       </div> */}
 
-        <BrowserRouter>
+        {/* <BrowserRouter> */}
           <NavbarComp />
-          {/* <BookmarkedState> */}
+          <BookmarkedState>
           <Routes>
             <Route path="/" element={<ShopPage /> } />
             <Route path="/bookmarked" element={<BookmarkedPage />} />
@@ -35,9 +35,9 @@ const App = () =>{
              {/* element={<R3fPage />} */}
           </Routes>
 
-          <Footer/>
-          {/* </BookmarkedState> */}
-        </BrowserRouter>
+          {/* <Footer/> */}
+          </BookmarkedState>
+        {/* </BrowserRouter> */}
       </>
     )
 }

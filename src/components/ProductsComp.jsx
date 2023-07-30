@@ -1,6 +1,7 @@
 import React from "react"
 import ProductCard from "./ProductCard"
 
+
 const ProductsComp = ({products = []}) => {
   return (
     <>
@@ -8,6 +9,7 @@ const ProductsComp = ({products = []}) => {
         products.map((product) => (
           <ProductCard key={product.id} product={product}/>
         ))}
+        <button type="button" className="btn btn-outline-light">Order Now</button>
     </>
   );
 };

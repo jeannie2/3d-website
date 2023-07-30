@@ -1,3 +1,5 @@
 old/
 
 node_modules
+
+.env

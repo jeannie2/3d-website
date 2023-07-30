@@ -1,10 +1,10 @@
-# Ecommerce website
+# React-three-fiber
 
-Simple 3-page website for users to bookmark products and view the total cost
+Redo of Tesla Cybertruck landing page using React Three Fiber library, with order form page connected to Supabase back-end
 
 ## Technologies
 
-This project was made using React, Bootstrap, animate.css, Fake Store API
+This project was made using React, Bootstrap, React Three Fiber, PostgreSQL (Supbabase), Sketchfab
 
 ## How to use
 

@@ -1,14 +1,20 @@
 import React from "react"; // useMemo
-import { Container } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import ContactForm from "../components/ContactForm"
 
 const ContactFormPage = () => {
   return (
     <>
-    <Container id="shop-container" className='p-6'>
-        {/* <Row> */}
-      <ContactForm/>
-        {/* </Row> */}
+    <Container id="shop-container" className='h-75'>
+    {/* p-6  */}
+
+      <Row className="h-75">
+        <Col className="col-md-8 m-auto align-items-center ml-auto mr-auto">
+        {/* col-md-8
+         */}
+          <ContactForm/>
+        </Col>
+      </Row>
     </Container>
   </>
   )

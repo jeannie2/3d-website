@@ -3,6 +3,7 @@ import React from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import NavbarComp from "./components/Navbar"
 import ContactFormPage from "./pages/ContactFormPage"
+import SubmittedPage from "./pages/SubmittedPage"
 // import BookmarkedPage from "./pages/Bookmarked"
 // import AboutPage from "./pages/About"
 
@@ -24,10 +25,11 @@ const App = () =>{
           <NavbarComp />
           {/* <BookmarkedState> */}
           <Routes>
-            <Route path="/" element={<ContactFormPage /> } />
+            <Route path="/" element={<R3fPage /> } />
             {/* <Route path="/bookmarked" element={<BookmarkedPage />} /> */}
             {/* <Route path="/about" element={<AboutPage />} /> */}
-            <Route path="/r3f" element={<R3fPage />} />
+            {/* <Route path="/r3f" element={<R3fPage />} /> */}
+            <Route path="/submitted" element={<SubmittedPage />} />
             {/* <Route path="/r3f" element={<Canv />} /> */}
              {/* element={<R3fPage />} */}
           </Routes>

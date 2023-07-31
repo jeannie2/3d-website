@@ -1,7 +1,8 @@
 
 
 import * as THREE from 'three'
-import React from "react"
+import { Vector3 } from 'three'
+import React, { useState, useRef, useLayoutEffect } from "react"
 // import Container from 'react-bootstrap/Container';
 // import Row from 'react-bootstrap/Row';
 // import Col from 'react-bootstrap/Col';
@@ -10,22 +11,41 @@ import React from "react"
 import { Suspense } from 'react' //useRef, useEffect, useLayoutEffect
 import { Link, useNavigate } from 'react-router-dom'
 import { Canvas, useFrame, useThree, useLoader } from '@react-three/fiber'
-import { Environment, Lightformer, ContactShadows, OrbitControls, Stage, ScrollControls, Scroll, useScroll, useGLTF, useAnimations, Bounds } from '@react-three/drei'
+import { Environment, Lightformer, ContactShadows, OrbitControls, Stage, useDepthBuffer, ScrollControls, Scroll, useScroll, useGLTF, SpotLight, useAnimations, Bounds, CameraShake, Backdrop, Float } from '@react-three/drei'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import Loader from '../components/Loader'
 // import './styles.css'
 
 // import { useGlitch } from 'react-powerglitch'
 
-const R3fPage = () => {
-  // const glitch = useGlitch()
-  const navigate = useNavigate()
+function Rig() {
+  // const [vec] = useState(() => new THREE.Vector3())
+  // const { camera, mouse } = useThree()
+  // useFrame(() => camera.position.lerp(vec.set(mouse.x * 2, 1, 60), 0.05))
+  // return <CameraShake maxYaw={0.01} maxPitch={0.01} maxRoll={0.01} yawFrequency={0.5} pitchFrequency={0.5} rollFrequency={0.4} />
+
+    const { camera, mouse } = useThree()
+  const vec = new Vector3()
+
+  return useFrame(() => {
+    camera.position.lerp(vec.set(mouse.x, mouse.y, camera.position.z), 0.05)
+    camera.lookAt(0, 0, 0)
+  })
+}
 
   const Model = () => {
+    // const ref = useRef()
     const { width, height } = useThree((state) => state.viewport)
     const scroll = useScroll()
 
     useFrame(() => (gltf.scene.rotation.y = scroll.offset * Math.PI * 2))
+
+//     const dir = [0,0,0]
+//     const ref = useRef()
+// useLayoutEffect(() => {
+//   ref.current.lookAt({dir})
+//     // eslint-disable-next-line
+// }, [])
 
     const gltf = useLoader(
       GLTFLoader,
@@ -35,6 +55,7 @@ const R3fPage = () => {
     // gltf.scene.rotation.z = 180
     //
     //scale={[[width, height, 1]]}
+    // castShadow, receiveShadow
     return (
       <>
         <primitive object={gltf.scene} scale={0.012} position={[0, -2, 0]} rotation={[0, Math.PI / 1.5, 0]} />
@@ -42,9 +63,42 @@ const R3fPage = () => {
     )
   }
 
+
+function MovingSpot({ vec = new Vector3(), ...props }) {
+      const scroll = useScroll()
+  const light = useRef()
+  const viewport = useThree((state) => state.viewport)
+  // useFrame((state) => {
+  //   light.current.target.position.lerp(vec.set((state.mouse.x * viewport.width) / 2, (state.mouse.y * viewport.height) / 2, 0), 0.1)
+  //   light.current.target.updateMatrixWorld()
+  // })
+
+  useFrame(() => {
+    light.current.position.x = scroll.offset * Math.PI * 2
+  })
+  return <SpotLight castShadow ref={light} penumbra={1} distance={6} angle={0.35} attenuation={5} anglePower={4} intensity={2} {...props} />
+}
+
+const Scene = () => {
+  const depthBuffer = useDepthBuffer({ frames: 1 })
+  return (
+  <>
+    <MovingSpot depthBuffer={depthBuffer}  color="#0c8cbf" position={[3, 3, 2]} />
+      <MovingSpot depthBuffer={depthBuffer} color="#b00c3f" position={[1, 3, 0]} />
+      </>
+  )
+}
+
+const R3fPage = () => {
+
+  // const glitch = useGlitch()
+  const navigate = useNavigate()
+
+  // useFrame(() => (gltf.scene.rotation.y = scroll.offset * Math.PI * 2))
+
   return (
     <>
-
+    <div className="container-fluid" style={{height: '1100px'}}>
       <Canvas
         style={{ background: 'black' }}
         gl={{ logarithmicDepthBuffer: true, antialias: false }}
@@ -53,6 +107,7 @@ const R3fPage = () => {
         camera={{ position: [-5, 15, 50], fov: 25 }}>
       <Suspense fallback={<Loader />}>
         {/* higher z index closer to user. 30 */}
+        <pointLight position={[0, 20, 10]} intensity={5} />
         <hemisphereLight intensity={0.5} />
         {/* <hemisphereLight intensity={0.5} /> */}
         {/* <ContactShadows resolution={1024} frames={1} position={[0, -1.16, 0]} scale={15} blur={0.5} opacity={1} far={20} /> */}
@@ -63,13 +118,31 @@ const R3fPage = () => {
 
         {/* <Suspense fallback={null}> */}
         {/* <Suspense fallback={<Loader />}> */}
-        <Bounds fit clip observe>
+        {/* <Bounds fit clip observe> */}
+        {/* <Bounds fit clip observe damping={6} margin={1.2}> */}
           {/* Wrap contents you want to scroll into <ScrollControls> */}
 
           <ScrollControls pages={3}>
             {/* <Scroll> */}
             {/* <Stage intensity={0.5} shadows={{ type: 'accumulative', bias: -0.001 }} adjustCamera={false}> */}
+
+<Float
+  speed={1} // Animation speed, defaults to 1
+  rotationIntensity={1} // XYZ rotation intensity, defaults to 1
+  floatIntensity={1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
+  floatingRange={[]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
+>
+<Scene />
+
             <Model />
+
+            </Float>
+            {/* <Backdrop
+  floor={0.25} // Stretches the floor segment, 0.25 by default
+  segments={20} // Mesh-resolution, 20 by default
+>
+  <meshStandardMaterial color="#353540" />
+</Backdrop> */}
 
             {/* <mesh scale={4} position={[-3, -1.161, -1]} rotation={[-Math.PI / 2, 0, Math.PI / 2.5]}>
               <ringGeometry args={[0.9, 1, 3, 1]} />
@@ -163,7 +236,13 @@ const R3fPage = () => {
                 <li>Awesome adaptability</li>
               </ul>
 
-              <button id="order-btn" style={{ position: 'absolute', top: '400vh', left: '50vw', whiteSpace: 'nowrap', fontSize: '0.9rem', fontWeight: 'bold' }} onClick={() => navigate('/')}>ORDER NOW </button>
+
+              <video style={{ position: 'absolute', top: '400vh', left: '20vw', width: '60vw',  height: 'auto' }} autoPlay="autoPlay" muted controls>
+                <source src="cybertruck.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+
+              <button className="order-btn" style={{ position: 'absolute', top: '450vh', left: '50vw' }} onClick={() => navigate('/')}>ORDER NOW </button>
 
 
               {/* <button onClick={() => router.push(`/draft/${cardId}/submitted`)} type="button" className="btn btn-light button mx-auto">SEND</button> */}
@@ -179,6 +258,7 @@ const R3fPage = () => {
                 }}>
                 BETTER UTILITY THAN A TRUCK WITH MORE PERFORMANCE THAN A SPORTS CAR
               </h1> */}
+
             </Scroll>
           </ScrollControls>
           {/* <OrderButton /> */}
@@ -197,12 +277,27 @@ const R3fPage = () => {
 
             <Lightformer form="circle" color="pink" intensity={2} rotation-y={Math.PI / 2} position={[-50, 2, 0]} scale={[100, 2, 1]} />
             <Lightformer form="circle" color="white" intensity={2} rotation-y={-Math.PI / 2} position={[50, 2, 0]} scale={[100, 2, 1]} />
+
+                    <Lightformer form="circle" color="pink" intensity={2} rotation-y={Math.PI / 2} position={[-50, 2, 0]} scale={[100, 2, 1]} />
+            <Lightformer form="circle" color="white" intensity={2} rotation-y={-Math.PI / 2} position={[50, 2, 0]} scale={[100, 2, 1]} />
+
             {/* <Lightformer intensity={2} rotation-x={Math.PI / 2} position={[0, 4, -9]} scale={[10, 1, 1]} /> */}
             <Lightformer form="ring" color="blue" intensity={10} scale={2} position={[10, 5, 10]} onUpdate={(self) => self.lookAt(0, 0, 0)} />
             <Lightformer form="ring" color="aqua" intensity={10} scale={2} position={[-10, -5, -10]} onUpdate={(self) => self.lookAt(0, 0, 0)} />
           </Environment>
-          </Bounds>
+          {/* </Bounds> */}
+          {/* <Rig /> */}
         </Suspense>
+        {/* <CameraShake
+        maxYaw={0.05} // Max amount camera can yaw in either direction
+        maxPitch={0.05} // Max amount camera can pitch in either direction
+        maxRoll={0.1} // Max amount camera can roll in either direction
+        yawFrequency={0.1} // Frequency of the the yaw rotation
+        pitchFrequency={0.1} // Frequency of the pitch rotation
+        rollFrequency={0.1} // Frequency of the roll rotation
+        intensity={0.8} // initial intensity of the shake
+        decayRate={0.65} // if decay = true this is the rate at which intensity will reduce at />
+      /> */}
       </Canvas>
       {/* <html>
         <div style={{ color: 'red' }}> HERE I AM</div>
@@ -210,6 +305,7 @@ const R3fPage = () => {
       {/* <div ref={scrollRef} onScroll={(e) => (scroll.current = e.target.scrollTop / (e.target.scrollHeight - e.target.clientHeight))} className="scroll">
         <div style={{ height: `200vh`, pointerEvents: 'none' }}></div>
       </div> */}
+      </div>
     </>
   )
 }

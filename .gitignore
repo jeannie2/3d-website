@@ -3,5 +3,3 @@ old/
 node_modules
 
 .env
-
-# supabaseClient.js

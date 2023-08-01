@@ -5,6 +5,8 @@ import { supabaseClient } from '../../supabaseClient.js'
 
 const ContactForm = () => {
   const navigate = useNavigate()
+
+  // useState for all below like fcc example instead?
   const firstNameRef = useRef(null)
   const lastNameRef = useRef(null)
   const emailRef = useRef(null)
@@ -12,6 +14,9 @@ const ContactForm = () => {
   const [errorMsg, setErrorMsg] = useState("")
   const [msg, setMsg] = useState("")
   const [loading, setLoading] = useState(false)
+
+    // const register = (email, password) =>
+    // supabase.auth.signUp({ email, password });
 
 const handleSubmit = async (e) => {
   e.preventDefault()
@@ -30,7 +35,7 @@ const handleSubmit = async (e) => {
       const { data, error } = await supabaseClient
         .from('contacts')
         .insert([
-          {
+          { // set as array?
             first_name: firstNameRef.current.value,
             last_name: lastNameRef.current.value,
             email:  emailRef.current.value,
@@ -61,6 +66,13 @@ const handleSubmit = async (e) => {
     emailRef.current.value = ""
     phoneRef.current.value = ""
   };
+
+  //  const closeHandler = () => {
+  //   setFirstName("");
+  //   setLastName("");
+  //   setEmail(false);
+  //   setPhone();
+  // };
 
 return (
   <>
@@ -93,6 +105,12 @@ return (
           {errorMsg}
         </Alert>
       )}
+       {/* need ?  */}
+      {msg && (
+        <Alert variant="success" onClose={() => setMsg("")} dismissible>
+          {msg}
+        </Alert>
+      )}
       <div className="text-center mt-4">
         <Button disabled={loading} type="submit" className="order-btn">
           SUBMIT
@@ -104,3 +122,12 @@ return (
 }
 
 export default ContactForm
+
+// for textual form controls—like inputs and textareas—use the FormControl component
+
+// const { data, error } = await register (
+//   firstNameRef.current.value,
+//   lastNameRef.current.value,
+//   emailRef.current.value,
+//   phoneRef.current.value
+// );

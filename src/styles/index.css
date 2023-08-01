@@ -1,104 +1,27 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
-/*
-#bookmarked-container {
-  text-align: center;
-}
-
-#bookmarked-container li {
-  list-style: none;
-  box-shadow: 2px 5px 5px 3px black;
-  margin: 1rem;
-  border-radius: 1rem;
-}
-
-#bookmarked-container span {
-  font-weight: bold;
-}
-
-#search {
-  width: 15rem;
-  background:#F0F0F0;
-  border:none;
-  padding:0.5rem;
-}
-
-#about-container {
-  color: black;
-}
-
-h1 {
-  text-align: center;
-}
-
-.btn.btn:active {
-  background-color: green !important;
-}
-
-#sort {
-  float: right;
-}
-
-#quantity-input {
-  margin: 0.5rem;
-}
-
-img.card-img {
-  width: 100%;
-  height: 30vh;
-  object-fit: contain;
-}
- */
-#footer {
-  /* position: relative; // fixed
-  bottom: 0%;
-  right: 1%;
-  padding: 1%;
-  text-align: right;
-  font-size: 0.9rem;
-  background-image: none; */
-}
-
-#footer {
-  /* position: sticky;
-  top: 100vh;
-  color: red; */
+* {
+  box-sizing: border-box;
 }
 
 footer > ul > li > a.nav-link {
   font-size: 0.8rem !important;
 }
 
-/* added from here */
-
-* {
-  box-sizing: border-box;
-}
-
 html,
 body,
 #root {
   width: 100%;
-  height: 100%;
-  /* height: 1000px; */
-  /*  100%;  */
+  height: 100%; /*  1000px; */
   margin: 0;
   padding: 0;
 }
-/*
-#root>div {
-   width: 100% !important;
-   height: 100%;
-} */
 
 body {
   background: black;
 }
 
-/* video {
-  left: 50%;
-  transform: translateX(-50%)
-} */
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -116,20 +39,17 @@ canvas {
 }
 
 #cybertruck-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: 'Comforter Brush', cursive;
   font-family: 'Rock Salt', cursive;
   font-family: 'Sedgwick Ave Display', cursive;
   font-family: 'Oxanium', cursive;
 
-  /* text-align: center; */
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
-h1,h6,
-p,
-ul, nav {
+h1,h6,p, ul, nav {
   font-family: 'Noto Sans', sans-serif;
   font-family: 'Share Tech', sans-serif;
   font-family: 'Orbitron', sans-serif;
@@ -144,11 +64,6 @@ ul, nav {
 }
 
 .navbar-nav {
-  /* display: flex;
-  text-align: center;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto; */
   padding-left: -20%;
 }
 
@@ -179,3 +94,14 @@ ul, nav {
   padding: 1em 2em;
   box-shadow: 0 0 0 0 white, inset 6em 3.5em 0 0 white;
 }
+
+/* video {
+  left: 50%;
+  transform: translateX(-50%)
+} */
+
+/*
+#root>div {
+  width: 100% !important;
+  height: 100%;
+} */

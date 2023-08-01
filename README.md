@@ -8,4 +8,4 @@ This project was made using React, Bootstrap, React Three Fiber, PostgreSQL (Sup
 
 ## How to use
 
-View demo on [Code Sandbox](https://90fvpe-5000.csb.app/). To run locally, git clone git@github.com:jeannie2/ecommerce.git and open in code editor, npm install and npm start.
+View demo on [Code Sandbox](xxx)

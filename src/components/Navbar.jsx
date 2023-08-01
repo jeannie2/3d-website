@@ -26,7 +26,6 @@ const NavbarComp = () => {
                 <Nav.Link as={NavLink} to="https://www.tesla.com/charging">Charging</Nav.Link>
                 <Nav.Link as={NavLink} to="https://www.tesla.com/about">About</Nav.Link>
                 <Nav.Link as={NavLink} to="https://shop.tesla.com">Shop</Nav.Link>
-                {/* <Nav.Link as={NavLink} to="/r3f">r3f</Nav.Link> */}
               </Nav>
             </Container>
           </Navbar.Collapse>

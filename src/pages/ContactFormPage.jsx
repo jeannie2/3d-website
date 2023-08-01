@@ -1,4 +1,4 @@
-import React from "react" // useMemo
+import React from "react"
 import { Container, Row, Col } from 'react-bootstrap'
 import ContactForm from "../components/ContactForm"
 

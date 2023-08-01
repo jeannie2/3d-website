@@ -94,7 +94,7 @@ const Scene = () => {
 const R3fPage = () => {
   const [isMobile, setIsMobile] = useState(false)
 
-  /* const handleResize = () => {
+  const handleResize = () => {
     if(window.innerWidth < 720) {
       setIsMobile(true)
     } else {
@@ -104,7 +104,7 @@ const R3fPage = () => {
 
   useEffect(()=> {
     window.addEventListener("resize", handleResize)
-  }) */
+  })
 
   // const glitch = useGlitch()
   const navigate = useNavigate()

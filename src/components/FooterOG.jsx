@@ -10,6 +10,7 @@ function Footer () {
           <li className="nav-item"><a href="https://www.tesla.com/legal" className="nav-link px-2 text-white">Privacy & Legal</a></li>
           <li className="nav-item"><a href="https://www.tesla.com/contact" className="nav-link px-2 text-white">Contact</a></li>
           <li className="nav-item"><a href="https://www.tesla.com/blog" className="nav-link px-2 text-white">News</a></li>
+          {/* <li className="nav-item"><a href="https://www.tesla.com/updates" className="nav-link px-2 text-white">Get Updates</a></li> */}
           <li className="nav-item"><a href="https://www.tesla.com/findus/list" className="nav-link px-2 text-white">Locations</a></li>
         </ul>
       </footer>

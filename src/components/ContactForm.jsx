@@ -79,22 +79,22 @@ return (
     <Form onSubmit={handleSubmit} className="text-white text-center mt-5">
       <Form.Group id="first-name" className="mt-3">
         <Form.Label>First name</Form.Label>
-        <Form.Control type="text" ref={firstNameRef} required className="bg-transparent w-50 border border-3 text-white mx-auto" />
+        <Form.Control type="text" ref={firstNameRef} required className="bg-transparent w-75 border border-3 text-white mx-auto" />
       </Form.Group>
 
       <Form.Group id="last-name" className="mt-3" >
         <Form.Label>Last name</Form.Label>
-        <Form.Control type="text" ref={lastNameRef} required className="bg-transparent w-50 border border-3 text-white mx-auto"/>
+        <Form.Control type="text" ref={lastNameRef} required className="bg-transparent w-75 border border-3 text-white mx-auto"/>
       </Form.Group>
 
       <Form.Group id="email" className="mt-3">
         <Form.Label>Email</Form.Label>
-        <Form.Control type="email" ref={emailRef} required className="bg-transparent w-50 border border-3 text-white mx-auto"/>
+        <Form.Control type="email" ref={emailRef} required className="bg-transparent w-75 border border-3 text-white mx-auto"/>
       </Form.Group>
 
       <Form.Group id="phone" className="mt-3">
         <Form.Label>Phone number</Form.Label>
-        <Form.Control type="number" ref={phoneRef} placeholder="NXX-XXX-XXXX" required className="bg-transparent w-50 border border-3 text-white mx-auto"/>
+        <Form.Control type="number" ref={phoneRef} placeholder="NXX-XXX-XXXX" required className="bg-transparent w-75 border border-3 text-white mx-auto"/>
       </Form.Group>
 
       {errorMsg && (
@@ -123,12 +123,7 @@ return (
 
 export default ContactForm
 
-
-  // <button id="order-btn" style={{ position: 'absolute', top: '400vh', left: '50vw', whiteSpace: 'nowrap', fontSize: '0.9rem', fontWeight: 'bold' }} onClick={() => navigate('/')}>ORDER NOW </button>
-
-
-
-// for textual form controls—like inputs and textareas—use the FormControl component.
+// for textual form controls—like inputs and textareas—use the FormControl component
 
 // const { data, error } = await register (
 //   firstNameRef.current.value,

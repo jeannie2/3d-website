@@ -1,4 +1,4 @@
-import React from "react"; // useMemo
+import React from "react" // useMemo
 import { Container, Row, Col } from 'react-bootstrap'
 import ContactForm from "../components/ContactForm"
 
@@ -10,8 +10,6 @@ const ContactFormPage = () => {
 
       <Row className="h-75">
         <Col className="col-md-8 m-auto align-items-center ml-auto mr-auto">
-        {/* col-md-8
-         */}
           <ContactForm/>
         </Col>
       </Row>

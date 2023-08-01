@@ -85,16 +85,20 @@ body,
   margin: 0;
   padding: 0;
 }
-
+/*
 #root>div {
-  /* width: 100% !important; */
-  /* height: 100%; */
-}
+   width: 100% !important;
+   height: 100%;
+} */
 
 body {
   background: black;
 }
 
+/* video {
+  left: 50%;
+  transform: translateX(-50%)
+} */
 @keyframes fade-in {
   from {
     opacity: 0;

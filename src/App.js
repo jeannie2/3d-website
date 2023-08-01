@@ -29,6 +29,7 @@ const App = () =>{
             {/* <Route path="/bookmarked" element={<BookmarkedPage />} /> */}
             {/* <Route path="/about" element={<AboutPage />} /> */}
             {/* <Route path="/r3f" element={<R3fPage />} /> */}
+            <Route path="/order" element={<ContactFormPage /> } />
             <Route path="/submitted" element={<SubmittedPage />} />
             {/* <Route path="/r3f" element={<Canv />} /> */}
              {/* element={<R3fPage />} */}

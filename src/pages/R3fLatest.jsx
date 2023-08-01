@@ -94,7 +94,7 @@ const Scene = () => {
 const R3fPage = () => {
   const [isMobile, setIsMobile] = useState(false)
 
-  /* const handleResize = () => {
+  const handleResize = () => {
     if(window.innerWidth < 720) {
       setIsMobile(true)
     } else {
@@ -104,7 +104,7 @@ const R3fPage = () => {
 
   useEffect(()=> {
     window.addEventListener("resize", handleResize)
-  }) */
+  })
 
   // const glitch = useGlitch()
   const navigate = useNavigate()
@@ -134,7 +134,7 @@ const R3fPage = () => {
         {/* <Suspense fallback={null}> */}
         {/* <Suspense fallback={<Loader />}> */}
         {/* <Bounds fit clip observe> */}
-        {/* <Bounds fit clip observe damping={6} margin={1.2}> */}
+        <Bounds fit clip observe damping={6} margin={1.2}>
           {/* Wrap contents you want to scroll into <ScrollControls> */}
 
           <ScrollControls pages={3}>
@@ -191,13 +191,13 @@ const R3fPage = () => {
                 CYBERTRUCK
               </h1>
 
-              <div style={{ width: isMobile ? '70vw' : '30vw' }}>
-                <h1 style={{ position: 'absolute', top: '100vh', left: isMobile ? '20vw' : '70vw', color: 'white' }}>EXOSKELETON</h1>
+              <div style={{ width: '30vw' }}>
+                <h1 style={{ position: 'absolute', top: '100vh', left: isMobile ? 'left: 20vw' : 'left: 70vw', color: 'white' }}>EXOSKELETON</h1>
                 <p
                   style={{
                     position: 'absolute',
                     top: '108vh',
-                    left: isMobile ? '20vw' : '70vw',
+                    left: '70vw',
                     paddingRight: '50%',
                     color: 'white',
                     width: '40vw',
@@ -217,8 +217,7 @@ const R3fPage = () => {
               <p
                 style={{
                   position: 'absolute',
-                  // top: isMobile? '235vh' : '209vh',
-                  top: '220vh',
+                  top: '209vh',
                   left: '70vw',
                   paddingRight: '50%',
                   color: 'white',
@@ -230,13 +229,11 @@ const R3fPage = () => {
                 the shell on the outside of the car and provides you and your passengers maximum protection.
               </p>
 
-              <h1 style={{ position: 'absolute', top: '260vh', left: '10vw', color: 'white', width: '40vw', fontSize: '1.5rem' }}>TESLA ARMOR GLASS</h1>
-                {/* <h1 style={{ position: 'absolute', top: '250vh', left: '10vw', color: 'white', width: '40vw', fontSize: '1.5rem' }}>TESLA ARMOR GLASS</h1> */}
+              <h1 style={{ position: 'absolute', top: '250vh', left: '10vw', color: 'white', width: '40vw', fontSize: '1.5rem' }}>TESLA ARMOR GLASS</h1>
               <p
                 style={{
                   position: 'absolute',
-                  // top: isMobile? '285vh' : '257vh',
-                  top: '275vh',
+                  top: '257vh',
                   left: '10vw',
                   paddingRight: '50%',
                   color: 'white',
@@ -247,7 +244,7 @@ const R3fPage = () => {
                 Ultra-strong glass and polymer-layered composite can absorb and redirect impact force for improved performance and damage tolerance.
               </p>
               <h1 style={{ position: 'absolute', top: '340vh', left: '10vw', color: 'white', width: '40vw', fontSize: '1.5rem' }}>VERSATILE UTILITY</h1>
-              <ul style={{ position: 'absolute', top: isMobile ? '355vh' : '348vh', left: '10vw', color: 'white', width: '40vw', fontSize: '0.9rem' }}>
+              <ul style={{ position: 'absolute', top: '348vh', left: '10vw', color: 'white', width: '40vw', fontSize: '0.9rem' }}>
                 <li>Vault-like storage</li>
                 <li>Rugged strength</li>
                 <li>Adaptive air suspension</li>
@@ -304,7 +301,7 @@ const R3fPage = () => {
             <Lightformer form="ring" color="blue" intensity={10} scale={2} position={[10, 5, 10]} onUpdate={(self) => self.lookAt(0, 0, 0)} />
             <Lightformer form="ring" color="aqua" intensity={10} scale={2} position={[-10, -5, -10]} onUpdate={(self) => self.lookAt(0, 0, 0)} />
           </Environment>
-          {/* </Bounds> */}
+          </Bounds>
           {/* <Rig /> */}
         </Suspense>
         {/* <CameraShake

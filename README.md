@@ -8,7 +8,7 @@ This project was made using React, Bootstrap, React Three Fiber, PostgreSQL (Sup
 
 ## How to use
 
-View demo on [Code Sandbox](https://codesandbox.io/s/github/jeannie2/3d-website).
+View demo on [Code Sandbox](https://sdk39k.csb.app/). CodeSandBox version order form links to Tesla website not Supabase.
 
 ## Sources
 

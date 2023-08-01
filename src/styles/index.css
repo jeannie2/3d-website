@@ -57,12 +57,6 @@ h1,h6,p, ul, nav {
   font-family: 'Oxanium', cursive;
 }
 
-@media only screen and (max-width: 600px) {
-  /* .navbar-nav {
-    margin-left: 0 !important;
-  } */
-}
-
 .navbar-nav {
   padding-left: -20%;
 }
@@ -93,6 +87,12 @@ h1,h6,p, ul, nav {
   margin: 0.5em;
   padding: 1em 2em;
   box-shadow: 0 0 0 0 white, inset 6em 3.5em 0 0 white;
+}
+
+@media only screen and (max-width: 600px) {
+  /* .navbar-nav {
+    margin-left: 0 !important;
+  } */
 }
 
 /* video {

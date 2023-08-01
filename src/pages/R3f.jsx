@@ -1,5 +1,3 @@
-
-
 // import * as THREE from 'three'
 import React, { useState, useRef, useEffect } from "react"
 import { Suspense } from 'react'
